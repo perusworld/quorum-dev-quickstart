@@ -49,3 +49,10 @@ discovery-enabled=true
 {% else %}
 discovery-enabled=false
 {% endif %}
+
+
+{% if enable_dns %}
+# dns
+Xdns-enabled=true
+Xdns-update-enabled=true
+{% endif %}

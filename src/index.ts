@@ -8,7 +8,28 @@ const defaults : AnswerMap = {
     enable_static_nodes: false,
     enable_boot_nodes: true,
     enable_p2p_discovery: true,
-    enable_node_permissions: true
+    enable_node_permissions: true,
+    enable_dns: false,
+    ipaddress_mapping: {
+        validator1: '172.16.239.11',
+        validator2: '172.16.239.12',
+        validator3: '172.16.239.13',
+        validator4: '172.16.239.14',
+        rpcnode: '172.16.239.15',
+        member1besu: '172.16.239.16',
+        member2besu: '172.16.239.17',
+        member3besu: '172.16.239.18',
+    },
+    dns_mapping: {
+        validator1: 'validator1',
+        validator2: 'validator2',
+        validator3: 'validator3',
+        validator4: 'validator4',
+        rpcnode: 'rpcnode',
+        member1besu: 'member1besu',
+        member2besu: 'member2besu',
+        member3besu: 'member3besu',
+    }
 };
 
 export async function main(): Promise<void> {

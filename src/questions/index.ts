@@ -85,12 +85,19 @@ const _orchestrateQuestion: QuestionTree = {
     }
 };
 
+const _dnsQuestion: QuestionTree = {
+    name: "enable_dns",
+    prompt: "Do you wish to use dns instead of ip address for the nodes ? [Y/n], Default: [n]",
+};
+// have to add this below the definition because of the self reference..
+_dnsQuestion.transformerValidator = _getYesNoValidator(_dnsQuestion, _orchestrateQuestion, "n");
+
 const _nodePermissionsQuestion: QuestionTree = {
     name: "enable_node_permissions",
     prompt: "Do you wish to use file based node level permissions ? [Y/n], Default: [Y]",
 };
 // have to add this below the definition because of the self reference..
-_nodePermissionsQuestion.transformerValidator = _getYesNoValidator(_nodePermissionsQuestion, _orchestrateQuestion, "y");
+_nodePermissionsQuestion.transformerValidator = _getYesNoValidator(_nodePermissionsQuestion, _dnsQuestion, "y");
 
 const _p2pDiscoveryQuestion: QuestionTree = {
     name: "enable_p2p_discovery",
